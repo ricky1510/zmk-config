@@ -68,9 +68,9 @@
 
         left_layer {
             bindings = <
-                &kp LCMD(Q)   &kp LCMD(W) &kp LCMD(TAB) &kp NUM_4       &kp NUM_5           &kp NUM_6   &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp NUM_0
-                &kp LCMD(A)   &kp LCMD(S) &kp DQT       &kp PIPE2       &kp HASH 		    &kp MINUS   &kp EQL     &kp LBKT    &kp RBKT    &kp DEL
-                &kp LCMD(Z)   &kp LCMD(X) &kp LCMD(C)   &kp LCMD(V) &kp TILDE2          &kp MINUS   &kp GRAVE   &kp LBKT    &kp RBKT    &kp DEL
+                &kp LG(Q)   &kp LG(W) &kp LG(TAB) &kp NUM_4       &kp NUM_5           &kp NUM_6   &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp NUM_0
+                &kp LG(A)   &kp LG(S) &kp DQT       &kp PIPE2       &kp HASH 		    &kp MINUS   &kp EQL     &kp LBKT    &kp RBKT    &kp DEL
+                &kp LG(Z)   &kp LG(X) &kp LG(C)   &kp LG(V)     &kp TILDE2          &kp MINUS   &kp GRAVE   &kp LBKT    &kp RBKT    &kp DEL
                                                         &mo 1           &kp LGUI            &kp RGUI    &mo 2
             >;
         };
