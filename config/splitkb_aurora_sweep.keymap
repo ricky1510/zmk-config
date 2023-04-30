@@ -68,27 +68,27 @@
 
         left_layer {
             bindings = <
-                &trans   &trans &trans      &kp LG(LS(NUM_4))   &trans                      &kp NUM_1   &kp NUM_2   &kp NUM_3   &trans      &kp DEL
-                &trans   &trans &trans      &trans              &trans 		                &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp NUM_0   &kp BSPC
-                &trans   &trans &trans      &trans              &trans                      &kp NUM_7   &kp NUM_8   &kp NUM_9   &trans      &trans
+                &none   &none &none      &kp LG(LS(NUM_4))   &none                      &kp NUM_1   &kp NUM_2   &kp NUM_3   &none      &kp DEL
+                &none   &none &none      &none              &none 		                &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp NUM_0   &kp BSPC
+                &none   &none &none      &none              &none                      &kp NUM_7   &kp NUM_8   &kp NUM_9   &none      &none
                                             &kp LGUI            &mo 1                       &mo 2       &kp LALT
             >;
         };
 
         right_layer {
             bindings = <
-                &kp TAB     &trans     &kp UP       &trans      &trans                          &trans   &trans    &trans    &trans    &kp DEL
-                &kp GRAVE   &kp LEFT   &kp DOWN     &kp RIGHT   &trans                          &trans   &trans    &trans    &trans    &kp BKSP
-                &kp LSFT    &trans     &trans       &trans      &trans                          &trans   &trans    &trans    &trans    &trans
+                &kp TAB     &none     &kp UP       &none      &none                          &none   &none    &none    &none    &kp DEL
+                &kp GRAVE   &kp LEFT   &kp DOWN     &kp RIGHT   &none                          &none   &none    &none    &none    &kp BKSP
+                &kp LSFT    &none     &none       &none      &none                          &none   &none    &none    &none    &none
                                                     &kp LGUI    &mo 1                           &mo 2    &kp LALT
             >;
         };
 
         tri_layer {
             bindings = <
-                &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp NUM_4   &kp NUM_5                   &trans  &trans      &trans          &trans      &trans
-                &kp F1      &kp NUM_3   &kp F3      &kp F4      &kp F5                      &trans  &kp PG_UP   &kp K_VOL_UP    &kp K_MUTE  &trans
-                &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &kp F7                      &trans  &kp PG_DN   &kp K_VOL_DN    &trans      &trans
+                &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp NUM_4   &kp NUM_5                   &none  &none      &none          &none      &none
+                &kp F1      &kp NUM_3   &kp F3      &kp F4      &kp F5                      &none  &kp PG_UP   &kp K_VOL_UP    &kp K_MUTE  &none
+                &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &kp F6      &kp F7                      &none  &kp PG_DN   &kp K_VOL_DN    &none      &none
                                                     &kp LGUI    &mo 1                       &mo 2   &kp LALT
             >;
         };
