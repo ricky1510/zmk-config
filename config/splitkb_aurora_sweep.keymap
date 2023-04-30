@@ -68,19 +68,19 @@
 
         left_layer {
             bindings = <
-                &kp TRANS   &kp TRANS &kp TRANS     &kp LG(LS(NUM_4))   &kp TRANS           &kp NUM_1   &kp NUM_2   &kp NUM_3   &kp TRANS   &kp TRANS
-                &kp TRANS   &kp TRANS &kp TRANS     &kp TRANS           &kp TRANS 		    &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp NUM_0   &kp DEL
-                &kp TRANS   &kp TRANS &kp TRANS     &kp TRANS           &kp TRANS           &kp NUM_7   &kp NUM_8   &kp NUM_9   &kp TRANS   &kp TRANS
-                                                    &kp LGUI            &mo 1               &kp RGUI    &mo 2
+                &trans   &trans &trans      &kp LG(LS(NUM_4))   &trans              &kp NUM_1   &kp NUM_2   &kp NUM_3   &trans      &trans
+                &trans   &trans &trans      &trans              &trans 		        &kp NUM_4   &kp NUM_5   &kp NUM_6   &kp NUM_0   &kp DEL
+                &trans   &trans &trans      &trans              &trans              &kp NUM_7   &kp NUM_8   &kp NUM_9   &trans      &trans
+                                            &kp LGUI            &mo 1               &kp RGUI    &mo 2
             >;
         };
 
         right_layer {
             bindings = <
-                &kp TRANS   &kp TRANS   &kp UP      &kp TRANS   &kp TRANS            &kp TRANS   &kp TRANS    &kp TRANS    &kp TRANS    &kp TRANS
-                &kp HASH    &kp LEFT    &kp DOWN    &kp RIGHT   &kp TRANS            &kp TRANS   &kp TRANS    &kp TRANS    &kp TRANS    &kp BKSP
-                &kp LSFT    &kp TRANS   &kp TRANS   &kp TRANS   &kp TRANS            &kp TRANS   &kp TRANS    &kp TRANS    &kp TRANS    &kp TRANS
-                                                    &mo 3       &kp LCTL             &kp SPC     &mo 2
+                &trans   &trans     &kp UP      &trans      &trans            &trans   &trans    &trans    &trans    &trans
+                &kp HASH &kp LEFT   &kp DOWN    &kp RIGHT   &trans            &trans   &trans    &trans    &trans    &kp BKSP
+                &kp LSFT &trans     &trans      &trans      &trans            &trans   &trans    &trans    &trans    &trans
+                                                &mo 3       &kp LCTL          &kp SPC     &mo 2
             >;
         };
 
