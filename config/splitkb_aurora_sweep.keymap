@@ -10,7 +10,7 @@
                #binding-cells = <0>;
                bindings
                     = <&macro_press &kp LSHFT>
-                    , <&macro_tap &kp r &kp i &kp c &kp y &kp a &kp d &kp m &kp i &kp r &kp a &kp a &kp l &kp w &kp o &kp l &kp l>
+                    , <&macro_tap &kp R &kp I &kp C &kp C &kp C &kp C &kp C &kp C &kp C>
                     , <&macro_release &kp LSHFT>
                ;
           };
