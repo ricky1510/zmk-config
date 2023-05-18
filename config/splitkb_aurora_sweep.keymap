@@ -4,15 +4,14 @@
 
 / {
      macros {
-          ZMK_MACRO(zed_em_kay,
-               wait-ms = <10>;
-               tap-ms = <10>;
+          zed_em_kay: zed_em_kay {
+               label = "ZM_zed_em_kay";
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
                bindings
-                    = <&macro_press &kp LSHFT>
-                    , <&macro_tap &kp Z &kp M &kp K>
-                    , <&macro_release &kp LSHFT>
+                    = <&macro_tap &kp r &kp i &kp c &kp y &kp a &kp d &kp m &kp i &kp r &kp a &kp a &kp l &kp w &kp o &kp l &kp l>
                ;
-          )
+          };
      };
 
     keymap {
