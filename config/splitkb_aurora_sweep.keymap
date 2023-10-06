@@ -1,78 +1,94 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
+&mmv {
+   time-to-max-speed-ms = <680>;
+   acceleration-exponent=<2>;
+};
 / {
-     macros {
-          zed_em_kay: zed_em_kay {
-               label = "ZM_zed_em_kay";
-               compatible = "zmk,behavior-macro";
-               #binding-cells = <0>;
-               bindings
-                    = <&macro_tap &kp R &kp I &kp C &kp K &kp Y &kp DOT &kp A &kp D &kp M &kp I &kp R &kp A &kp A &kp L &kp AT &kp W &kp O &kp L &kp F &kp P &kp A &kp C &kp K &kp MINUS &kp D &kp C &kp S &kp DOT &kp C &kp O &kp M>
-               ;
-          };
-     };
 
-    keymap {
-        compatible = "zmk,keymap";
 
-        default_layer {
-            bindings = <
-                //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-                //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-                     &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │
-                     &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp LALT
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                     &mt LSFT Z &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp CMMA   &kp DOT    &mt LSFT FSLH
-                //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                    &kp LGUI     &lt 1 SPC      &lt 2 RET  &kp BSPC
-                //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
-
-        left_layer {
-            bindings = <
-                //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-                     &kp ESC      &none      &none  &kp LG(LS(N4)) &zed_em_kay &kp N1    &kp N2      &kp N3     &none     &none
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                     &none      &none      &none     &none      &none           &kp N4    &kp N5      &kp N6     &kp N0     &kp LALT
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                     &kp LSFT   &none      &none     &none      &none           &kp N7    &kp N8      &kp N9     &none      &none
-                //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                     &kp LGUI   &kp SPC         &kp RET   &kp DEL
-                //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        right_layer {
-            bindings = <
-                //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-                     &kp TAB     &none     &kp UP     &none      &none          &none      &none      &none      &none      &kp DEL
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                     &kp GRAVE   &kp LEFT   &kp DOWN     &kp RIGHT   &none      &none      &none      &none      &none      &kp BKSP
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                     &kp LSFT    &none     &none       &none      &none         &none      &none      &none      &none      &none
-                //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                    &kp LGUI    &mo 1           &mo 2      &kp LALT
-                //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        tri_layer {
-            bindings = <
-                //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-                     &kp NUM_1  &kp NUM_2  &kp NUM_3  &kp NUM_4   &kp NUM_5     &none     &none      &none          &none      &none
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                     &kp F1     &kp NUM_3  &kp F3     &kp F4      &kp F5        &none   &kp PG_UP   &kp K_VOL_UP    &kp K_MUTE  &none
-                //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-                     &bt BT_CLR &bt BT_NXT &bt BT_PRV &kp F6      &kp F7        &none  &kp PG_DN   &kp K_VOL_DN    &none      &none
-                //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                    &kp LGUI    &mo 1           &mo 2   &kp LALT
-                //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
+	td: tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
     };
+
+        keymap {
+                compatible = "zmk,keymap";
+
+       		default_layer {
+		bindings = <
+		&kp Y &kp C &kp L &kp M &kp K 						&kp Z &kp F  &kp U    &td MINUS COMMA  &kp BKSP
+		&kp I &kp S &hm LALT R &hm LGUI T &kp G 			       	&kp P &hm RGUI N &hm RALT E &kp A &kp O
+		&kp Q &kp V &kp W &kp D &kp J				        &kp B &kp H  &td UNDERSCORE SLASH &td EXCL DOT &kp X
+          				&mt LC(LS(LALT)) SPC &sk LSHIFT  				&sk RCTRL &to 1
+		>;
+		};
+
+       		left_layer {
+		bindings = <
+		&kp ESC  &kp ATSN   &td LC(LG(LS(N4))) LS(N3) &kp DLLR    &kp PRCNT		&kp CARET &kp LS(COMMA) &kp LS(DOT) &kp SEMI &kp BKSP
+		&kp TAB    &kp EQUAL    &kp LA(RBKT)      &kp LA(LS(RBKT))     &kp SQT 		&kp BSLH &kp LBRC  &kp RBRC &kp PIPE  &kp ENTER
+		&kp TILDE    &kp LA(N3) 	&kp LA(LBKT) &kp LA(LS(LBKT))  &kp DQT 	&kp LBKT &kp LPRN &kp RPRN &kp RBKT  &to 3
+					    &to 0  &sk LSHIFT  					&sk RALT &to 2
+		>;
+		};
+
+		right_layer {
+		bindings = <
+		&kp ESC  &kp C_PP &kp C_PREV  &kp C_NEXT  &kp LS(MINUS)    			&kp MINUS  &kp N7 &kp N8 &kp N9 &trans
+		&kp TAB  &trans   &kp C_VOL_DN  &kp C_VOL_UP  &kp LS(EQUAL) 			&kp EQUAL &kp N4  &kp N5  &kp N6   &kp ENTER
+		&to 4  &kp AMPS &kp SLASH &kp STAR &kp DOT    			&kp N0 &kp N1 &kp N2 &kp N3  &trans
+					  &to 0 &sk LGUI  				&sk RALT  &to 2
+		>;
+		};
+
+		tri_layer {
+		bindings = <
+		&trans  &mwh SCROLL_LEFT    &mmv MOVE_UP    &mwh SCROLL_RIGHT    &kp NUM_5 			&kp LG(LBKT)   &kp LC(LS(TAB))   &kp RC(TAB) &kp LG(RBKT) &trans
+		&kp F1 &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp DEL  						&kp LEFT &kp DOWN  &kp UP &kp RIGHT &kp ENTER
+		&td LG(GRAVE) GRAVE &mkp RCLK  &mwh SCROLL_UP &mwh SCROLL_DOWN &trans   				&mkp LCLK &kp PG_DN  &kp K_VOL_DN  &trans &trans
+					 &to 0 &trans  					&sk RALT &to 1
+		>;
+		};
+		bt {
+		bindings = <
+		&trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans
+		&trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans
+		&bt BT_PRV  &bt BT_NXT &bt BT_CLR &trans &trans   				&trans &trans  &trans  &trans &trans
+					 &to 0 &trans  					&trans &to 1
+		>;
+		};
+
+	};
 };
