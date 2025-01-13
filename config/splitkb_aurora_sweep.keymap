@@ -19,10 +19,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W      &kp E        &kp R    &kp T      &kp Y       &kp U       &kp I        &kp O    &kp P
-&hm LALT A        &kp S      &kp D        &kp F    &kp G      &hm RCMD H  &hm RALT J  &hm RCTRL K  &kp L    &kp BSPC
-&hm LEFT_SHIFT Z  &kp X      &hm LCTRL C  &lt 1 V  &lt 2 B    &lt 2 N     &lt 1 M     &kp COMMA    &kp DOT  &hm RIGHT_SHIFT FSLH
-&hm LCMD SPACE    &kp SPACE                                                                        &kp RET  &kp GRAVE
+&kp Q             &kp W           &kp E  &kp R    &kp T      &kp Y    &kp U    &kp I      &kp O    &kp P
+&hm LALT A        &kp S           &kp D  &kp F    &kp G      &kp H    &kp J    &kp K      &kp L    &kp BSPC
+&hm LEFT_SHIFT Z  &hm LEFT_ALT X  &kp C  &lt 1 V  &lt 2 B    &lt 2 N  &lt 1 M  &kp COMMA  &kp DOT  &hm RIGHT_SHIFT FSLH
+&kp LCMD          &kp SPACE                                                               &kp RET  &kp ESCAPE
             >;
         };
 
@@ -37,10 +37,10 @@
 
         symbols {
             bindings = <
-&kp TAB         &none     &kp UP    &none      &none    &none  &none  &none  &none          &none
-&kp GRAVE       &kp LEFT  &kp DOWN  &kp RIGHT  &none    &none  &none  &none  &none          &kp DEL
-&kp LEFT_SHIFT  &none     &none     &none      &none    &none  &none  &none  &none          &none
-&kp LGUI        &none                                                        &kp RIGHT_ALT  &none
+&kp TAB         &kp K_PREVIOUS  &kp UP    &kp K_NEXT        &kp K_MUTE            &kp EXCL       &kp AT_SIGN   &kp HASH              &kp MINUS              &kp PLUS
+&kp GRAVE       &kp LEFT        &kp DOWN  &kp RIGHT         &kp K_VOLUME_UP       &kp DOLLAR     &kp PERCENT   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp DEL
+&kp LEFT_SHIFT  &none           &none     &kp K_PLAY_PAUSE  &kp K_VOLUME_DOWN2    &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
+&kp LGUI        &none                                                                                                                &kp RIGHT_ALT          &none
             >;
         };
     };
