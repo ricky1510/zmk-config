@@ -28,19 +28,19 @@
 
         numbers {
             bindings = <
-&kp TAB         &none  &none  &kp LG(LS(N4))  &none    &kp N1  &kp N2  &kp N3  &kp MINUS  &kp EQUAL
-&none           &none  &none  &none           &none    &kp N4  &kp N5  &kp N6  &kp SEMI   &kp SQT
-&kp LEFT_SHIFT  &none  &none  &none           &none    &kp N7  &kp N8  &kp N9  &kp N0     &none
-&kp LGUI        &none                                                          &none      &none
+&kp TAB         &none   &none  &kp LG(LS(N4))  &none    &kp N1  &kp N2  &kp N3  &kp MINUS  &kp EQUAL
+&none           &none   &none  &none           &none    &kp N4  &kp N5  &kp N6  &kp PLUS   &kp BACKSPACE
+&kp LEFT_SHIFT  &none   &none  &none           &none    &kp N7  &kp N8  &kp N9  &kp N0     &none
+&trans          &trans                                                          &trans     &trans
             >;
         };
 
         symbols {
             bindings = <
-&kp TAB         &kp K_PREVIOUS  &kp UP    &kp K_NEXT        &kp K_MUTE            &kp EXCL       &kp AT_SIGN   &kp HASH              &kp MINUS              &kp PLUS
+&kp TAB         &kp K_PREVIOUS  &kp UP    &kp K_NEXT        &kp K_MUTE            &kp EXCL       &kp AT_SIGN   &kp HASH              &trans                 &kp GRAVE
 &kp GRAVE       &kp LEFT        &kp DOWN  &kp RIGHT         &kp K_VOLUME_UP       &kp DOLLAR     &kp PERCENT   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp DEL
 &kp LEFT_SHIFT  &none           &none     &kp K_PLAY_PAUSE  &kp K_VOLUME_DOWN2    &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
-&kp LGUI        &none                                                                                                                &kp RIGHT_ALT          &none
+&trans          &trans                                                                                                               &trans                 &trans
             >;
         };
     };
